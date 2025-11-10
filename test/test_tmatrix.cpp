@@ -107,7 +107,7 @@ TEST(TDynamicMatrix, compare_matrix_with_itself_return_true)
 TEST(TDynamicMatrix, matrices_with_different_size_are_not_equal)
 {
   TDynamicMatrix<int> m1(2), m2(3);
-  EXPECT_TRUE(m1 != m2);
+  EXPECT_FALSE(m1 == m2);
 }
 
 TEST(TDynamicMatrix, can_add_matrices_with_equal_size)
