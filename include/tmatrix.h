@@ -130,7 +130,9 @@ class TDynamicVector {
     for (size_t i = 0; i < sz; i++) temp.pMem[i] -= v.pMem[i];
     return temp;
   }
-  T operator*(const TDynamicVector& v) noexcept(noexcept(T())) {
+  T operator*(const TDynamicVector& v) {
+    if (sz != v.sz) throw runtime_error("Lengths are not equal");
+   
     T sum = T();
     for (size_t i = 0; i < sz; i++)
       sum += pMem[i] * v.pMem[i];
